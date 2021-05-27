@@ -1,0 +1,42 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.4.5)
+
+2021-04-25 10:40:53.231  INFO 1883 --- [           main] com.web.pj.PjApplication                 : Starting PjApplication v0.0.1-SNAPSHOT using Java 1.8.0_282 on ip-172-33-0-251 with PID 1883 (/home/ubuntu/web/pj-0.0.1-SNAPSHOT.jar started by ubuntu in /home/ubuntu/web)
+2021-04-25 10:40:53.244  INFO 1883 --- [           main] com.web.pj.PjApplication                 : No active profile set, falling back to default profiles: default
+2021-04-25 10:40:57.288  INFO 1883 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-04-25 10:40:57.327  INFO 1883 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-25 10:40:57.327  INFO 1883 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-04-25 10:40:57.500  INFO 1883 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-25 10:40:57.501  INFO 1883 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4053 ms
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.4.0 
+2021-04-25 10:41:00.552  INFO 1883 --- [           main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-25 10:41:00.747  INFO 1883 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-25 10:41:01.428  WARN 1883 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2021-04-25 10:41:01.429  INFO 1883 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-25 10:41:01.439  INFO 1883 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-04-25 10:41:01.473  INFO 1883 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-25 10:41:01.522 ERROR 1883 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
