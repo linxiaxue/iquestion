@@ -48,7 +48,7 @@ public class CodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://3.215.48.48:3306/web?characterEncoding=utf-8");
+        dsc.setUrl("jdbc:mysql://3.215.48.48:3306/iquestion?characterEncoding=utf-8");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
