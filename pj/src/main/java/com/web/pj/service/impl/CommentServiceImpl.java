@@ -2,7 +2,7 @@ package com.web.pj.service.impl;
 
 import com.web.pj.entity.Comment;
 import com.web.pj.mapper.CommentMapper;
-import com.web.pj.service.ICommentService;
+import com.web.pj.service.CommentService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2021-05-31
  */
 @Service
-public class CommentServiceImpl extends ServiceImpl<CommentMapper, Comment> implements ICommentService {
+public class CommentServiceImpl extends ServiceImpl<CommentMapper, Comment> implements CommentService {
 
 }

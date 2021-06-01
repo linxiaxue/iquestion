@@ -23,18 +23,25 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2021-04-24
  */
 @RestController
-@RequestMapping("/")
+@RequestMapping("/user")
 @Api("用户接口")
 public class UserController  {
 
     @Autowired
     private UserService userService;
 
-    @PostMapping("login")
+    @PostMapping("/login")
     @ApiOperation("登录")
-    public ResponseEntity<String> login(@RequestBody UserRequestDto dto){
+    public ResponseEntity<String> login(@RequestBody UserRequestDto.Simple dto){
 
         return ResponseEntity.ok(userService.login(dto));
+    }
+
+    @PostMapping("/register")
+    @ApiOperation("注册")
+    public ResponseEntity<String> register(@RequestBody UserRequestDto dto){
+
+        return ResponseEntity.ok("success");
     }
 }
 

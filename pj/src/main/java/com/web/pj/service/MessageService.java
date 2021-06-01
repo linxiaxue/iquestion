@@ -1,6 +1,6 @@
 package com.web.pj.service;
 
-import com.web.pj.entity.Comment;
+import com.web.pj.entity.Message;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author lics
  * @since 2021-05-31
  */
-public interface ICommentService extends IService<Comment> {
+public interface MessageService extends IService<Message> {
 
 }

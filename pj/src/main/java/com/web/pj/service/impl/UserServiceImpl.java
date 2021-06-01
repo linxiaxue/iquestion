@@ -25,7 +25,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     private UserMapper userMapper;
 
     @Override
-    public String login(UserRequestDto dto){
+    public String login(UserRequestDto.Simple dto){
         int id = dto.getId();
         User user = getById(id);
         if (user != null) {

@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author lics
  * @since 2021-05-31
  */
-public interface IQuestionService extends IService<Question> {
+public interface QuestionService extends IService<Question> {
 
 }

@@ -14,6 +14,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface UserService extends IService<User> {
 
-    String login(UserRequestDto dto);
+    String login(UserRequestDto.Simple dto);
 
 }
