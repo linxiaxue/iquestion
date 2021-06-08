@@ -3,6 +3,7 @@ package com.web.pj.service;
 import com.web.pj.dto.requestDto.UserRequestDto;
 import com.web.pj.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * <p>
@@ -14,6 +15,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface UserService extends IService<User> {
 
-    String login(UserRequestDto.Simple dto);
+    //String login(UserRequestDto.Simple dto);
+    User getUser(String name,String pwd);
+    String setUser(String name,String pwd);
 
 }

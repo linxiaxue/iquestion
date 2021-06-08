@@ -6,7 +6,6 @@ import lombok.Data;
 
 @Data
 public class CommentRequestDto {
-
     @ApiModelProperty(value = "发布者id")
     private Integer userId;
 
@@ -14,5 +13,18 @@ public class CommentRequestDto {
     private String content;
 
     @ApiModelProperty(value = "对应问题id")
+
     private Integer questionId;
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public Integer getQuestionId() {
+        return questionId;
+    }
 }

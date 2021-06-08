@@ -1,0 +1,8 @@
+# DataSource Config
+spring:
+  datasource:
+    username: root
+    password: cjt20000508
+    url: jdbc:mysql://127.0.0.1:3306/iquestion
+    driver-class-name: com.mysql.cj.jdbc.Driver
+

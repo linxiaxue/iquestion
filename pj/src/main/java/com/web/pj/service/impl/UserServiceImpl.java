@@ -23,20 +23,42 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Autowired
     private UserMapper userMapper;
+    @Override
+    public User getUser(String name,String pwd) {
+
+        User u = userMapper.getUser(name,pwd);
+        return u;
+    }
 
     @Override
-    public String login(UserRequestDto.Simple dto){
-        int id = dto.getId();
-        User user = getById(id);
-        if (user != null) {
-            if (dto.getPwd().equals(user.getPwd())) {
-                return "登录成功";
-            } else {
-                throw new WrongPasswordException();
-            }
-        }else {
-            throw new UserNotFoundException();
+    public String setUser(String name,String pwd){
+        if(name==null||pwd==null){
+            return "用户名或密码不能为空";
         }
+        User user=userMapper.getUserByName(name);
+        if (user!=null){
+            return "用户名已经存在";
+        }
+        User u=new User();
+        u.setName(name);
+        u.setPwd(pwd);
+        saveOrUpdate(u);
+        return "注册成功";
     }
+
+    //@Override
+    //public String login(UserRequestDto.Simple dto){
+        //int id = dto.getId();
+        //User user = getById(id);
+        //if (user != null) {
+            //if (dto.getPwd().equals(user.getPwd())) {
+              //  return "登录成功";
+            //} else {
+              //  throw new WrongPasswordException();
+            //}
+        //}else {
+          //  throw new UserNotFoundException();
+        //}
+    //}
 
 }
