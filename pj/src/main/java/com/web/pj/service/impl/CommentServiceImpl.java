@@ -2,9 +2,12 @@ package com.web.pj.service.impl;
 
 import com.web.pj.entity.Comment;
 import com.web.pj.entity.History;
+import com.web.pj.entity.Question;
+import com.web.pj.entity.User;
 import com.web.pj.mapper.CommentMapper;
 import com.web.pj.mapper.HistoryMapper;
 import com.web.pj.mapper.QuestionMapper;
+import com.web.pj.mapper.UserMapper;
 import com.web.pj.service.CommentService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.web.pj.service.MessageService;
@@ -34,6 +37,8 @@ public class CommentServiceImpl extends ServiceImpl<CommentMapper, Comment> impl
     private QuestionService questionService;
     @Autowired
     private QuestionMapper questionMapper;
+    @Autowired
+    private UserMapper userMapper;
 
     @Autowired
     private HistoryMapper historyMapper;
@@ -50,7 +55,10 @@ public class CommentServiceImpl extends ServiceImpl<CommentMapper, Comment> impl
         try {
             Integer toId=questionService.getById(questionId).getUserId();
             saveOrUpdate(comment);
-            messageService.setMessage(userId,toId,content);
+            User fromUser = userMapper.selectById(userId);
+            Question question = questionMapper.getQuestionById(questionId);
+            String string = "用户"+fromUser.getName()+"回复了你的问题("+question.getTitle()+")："+content;
+            messageService.setMessage(userId,toId,string);
             questionService.addHeat(questionId,2);
             questionService.addComment(questionId);
         }catch (Exception e){
