@@ -61,7 +61,7 @@ public class UserController  {
         if (u != null) {
             String token = UUID.randomUUID().toString().replaceAll("-", "");
             //stringRedisTemplate.opsForValue().set(token, String.valueOf(u.getId()), 3600, TimeUnit.SECONDS);//将用户的ID信息存入redis缓存，并设置一小时的过期时间
-            return Msg.success().add("token",token).add("info","登录成功");
+            return Msg.success().add("token",token).add("info","登录成功").add("id",u.getId());
         }else {
             //User u1=new User();
             //u1.setId(1);

@@ -23,7 +23,6 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 @ApiModel(value="Like对象", description="")
 @TableName("like")
-
 public class Like implements Serializable{
     private static final long serialVersionUID = 1L;
 

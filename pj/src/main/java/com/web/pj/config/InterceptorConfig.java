@@ -6,12 +6,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-@Configuration
+
 public class InterceptorConfig extends WebMvcConfigurationSupport {
 
     @Autowired
     private ParamInterceptor paramInterceptor;
 
+    @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //此处配置拦截路径
        //registry.addInterceptor(paramInterceptor).addPathPatterns("/**").excludePathPatterns("/user/login/**","/swagger-ui.html/**","/swagger-resources/**","/webjars/**","/v2/**");

@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+
 @RestController
 @RequestMapping("/knowledgeMap")
 @Api("知识图谱")
@@ -29,7 +31,7 @@ public class KnowledgeMapController {
 
     @GetMapping("/search")
     @ApiOperation("根据自定义问题搜索")
-    public Msg search(@RequestParam(value = "question")@ApiParam("问题") String question){
+    public Msg search(@RequestParam(value = "question")@ApiParam("问题") String question) throws IOException {
         return Msg.success().add("data",knowledgeMapService.getAnswer(question));
     }
 

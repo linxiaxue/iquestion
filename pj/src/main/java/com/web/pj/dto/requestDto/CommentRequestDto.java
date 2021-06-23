@@ -13,7 +13,6 @@ public class CommentRequestDto {
     private String content;
 
     @ApiModelProperty(value = "对应问题id")
-
     private Integer questionId;
 
     public Integer getUserId() {
